@@ -11,11 +11,22 @@ const lookup = {
 };
 
 function rot13(encodedStr){
-   let decodedArr = []; // Your Result goes here
-  // Only change code below this line
+   let decodedStr = "";
 
-  return ;//return decodedArr
+  for (let i = 0; i < str.length; i++) {
+    let charCode = str.charCodeAt(i);
+
+    if (charCode >= 65 && charCode <= 90) {
+      // Rotate the letter by 13 places
+      charCode = ((charCode - 65 + 13) % 26) + 65;
+    }
+
+    decodedStr += String.fromCharCode(charCode);
+  }
+
+  return decodedStr;
 }
+
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
